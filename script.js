@@ -30,15 +30,6 @@ function hideNoButton() {
     document.getElementById('noText').style.display = 'block';
 }
 
-function moveNoButton() {
-    const button = document.getElementById('noButton');
-    const newPositionX = Math.floor(Math.random() * (window.innerWidth - button.clientWidth));
-    const newPositionY = Math.floor(Math.random() * (window.innerHeight - button.clientHeight));
-
-    button.style.position = 'absolute';
-    button.style.left = newPositionX + 'px';
-    button.style.top = newPositionY + 'px';
-}
 
 function goToNextPage() {
     window.location.href = 'nextPage.html';
