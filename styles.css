@@ -1,0 +1,47 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #FF99F0; /* Set the background color */
+}
+
+.container {
+    text-align: center;
+    color: #333; /* Set the text color */
+}
+.kirby-gif {
+    width: 150px; /* Adjust the width of the Kirby GIF as needed */
+    position: absolute;
+    top: 40px; /* Adjust the top position of the GIF */
+    left: 50%; /* Center the GIF horizontally */
+    transform: translateX(-50%); /* Center the GIF horizontally */
+}
+h1 {
+    font-family: 'Garamond', serif; /* Change the font for the h1 element */
+    font-size: 36px; /* Adjust the font size as needed */
+}
+button {
+    font-family: 'Garamond', serif;
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #fff; /* Set the button background color */
+    color: #FF99F0; /* Set the button text color */
+    border: 2px solid #FF99F0; /* Set the button border color */
+}
+
+#noButton {
+    font-family: 'Garamond', serif;
+    background-color: #FF6464; /* Override the button color for 'No' button */
+    color: #fff;
+}
+
+#noText {
+    font-family: 'Garamond', serif;
+    font-size: 18px;
+    color: #000; /* Set the text color for 'No' text */
+}
