@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif; /* Updated font to Georgia */
+            background-image: url('tulipan_background (2).jpg');
+            background-size: 2000px;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateX(100%);
+            pointer-events: none;
+        }
+
+        .active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        button {
+            background: #dd2bf2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: Georgia, serif; /* Updated font to Georgia */
+        }
+
+            button:hover {
+                background: #7c02a0;
+            }
+    </style>
+</head>
+<body>
+    <div id="slide1" class="slide active">
+        <div class="container">
+            <h1>Hey Claire!</h1>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <div id="slide2" class="slide hidden">
+        <div class="container">
+            <p id="reason">
+                I'm pretty sure you already know that I kind of like you (not too much).
+                <br>but do you really know why do I want you to be my valentines?
+            </p>
+            <button onclick="prevSlide()">Back</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <div id="slide3" class="slide hidden">
+        <div class="container">
+            <p>
+                When I first talked to you, I realized in just a moment that there was something special about you, I didn't know exactly what, but all I knew was that I wanted to keep talking to you.
+                Day after day, I started to feel more comfortable and wanted to get to know you even more, but I still couldn't understand why.
+                One day, I realized that there was not a particular thing about you that made me feel that way, but it was just you.
+                So I told myself, what would be better than showing her all the good things about her, so she can finally understand why her.
+                <br> Claire, this is for you.
+            </p>
+            <button onclick="prevSlide()">Back</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <div id="slide5" class="slide hidden">
+        <div class="container">
+            <p>Thank you for saying yes! To retrieve your gift, please follow the instructions below:</p>
+            <p>Instruction 1: [Enter instructions]</p>
+            <p>Instruction 2: [Enter instructions]</p>
+            <button onclick="restart()">Restart</button>
+        </div>
+    </div>
+
+    <script>
+let currentSlide = 1;
+
+function showSlide(slideNumber) {
+            document.querySelectorAll('.slide').forEach((slide, index) => {
+                slide.classList.remove('active');
+                slide.classList.add('hidden');
+                if (index + 1 === slideNumber) {
+                    slide.classList.add('active');
+                    slide.classList.remove('hidden');
+                }
+            });
+            currentSlide = slideNumber;
+}
+
+function nextSlide() {
+            if (currentSlide === 3) {
+                // Redirect to claire_main.html after Slide 3
+                window.location.href = "claire_main.html";
+            } else if (currentSlide < 4) { // Total slides are now 4
+                showSlide(currentSlide + 1);
+            }
+}
+
+function prevSlide() {
+            if (currentSlide > 1) {
+                showSlide(currentSlide - 1);
+            }
+}
+
+function restart() {
+            showSlide(1);
+}
+    </script>
+</body>
+</html>

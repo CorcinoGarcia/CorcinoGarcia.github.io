@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background-image: url('tulipan_background (2).jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .alert-container {
+            background: rgba(255, 255, 255, 0.1);
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+            margin: 10% auto;
+        }
+
+            .alert-container p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            max-width: 900px; 
+            width: 100%;
+            display: none; 
+        }
+
+        .frame {
+            width: 100%;
+            padding-top: 100%; 
+            background-color: rgba(255, 255, 255, 0.1); 
+            border: 5px solid rgba(255, 255, 255, 0.3); 
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .frame iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 125%;
+                border: none;
+                border-radius: 5px; 
+            }
+
+        button {
+            background: #dd2bf2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            font-family: Georgia, serif;
+        }
+
+            button:hover {
+                background: #7c02a0;
+                transform: scale(1.05);
+            }
+    </style>
+</head>
+<body>
+    <div class="alert-container" id="alertContainer">
+        <p>Sometimes words alone are not enough, so listening to these songs will help you understand how I feel about you.</p>
+        <button onclick="showGallery()">Continue</button>
+    </div>
+
+    <h1 style="display: none;" id="galleryTitle">Music</h1>
+    <div class="gallery" id="gallery">
+        <!-- Empty frames for Spotify embeds -->
+        <div class="frame">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7cbDxm3LQZ9tqrOcdKc2Ko?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="frame">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1y3CG6thNhG1ndaNW0JuEp?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="frame">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0f8eRy9A0n6zXpKSHSCAEp?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>        </div>
+        <div class="frame">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/16gJmoOqRt2lKmlXtDpWgH?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>        </div>
+        <div class="frame">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>        </div>
+        <div class="frame">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2VYnlKxB8jpbCeLUjQsebc?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>        </div>
+    </div>
+    <button onclick="window.location.href='claire_main.html'" style="display: none;" id="backButton">Back to Main</button>
+
+    <script>
+        function showGallery() {
+            document.getElementById('alertContainer').style.display = 'none';
+
+            document.getElementById('gallery').style.display = 'grid';
+            document.getElementById('galleryTitle').style.display = 'block';
+            document.getElementById('backButton').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
